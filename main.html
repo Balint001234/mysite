@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smooth Vibes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: linear-gradient(135deg, #0f0f17 0%, #1a1a2e 100%);
+      color: #e0e0ff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      height: 100vh;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(100, 200, 255, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 8vw, 6.8rem);
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      line-height: 0.95;
+      margin-bottom: 1.4rem;
+      background: linear-gradient(90deg, #a0d2ff, #c19eff, #ff9ed9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.38rem;
+      font-weight: 300;
+      color: #b0b0ff;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 38px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: white;
+      background: linear-gradient(45deg, #6366f1, #a855f7);
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.25);
+    }
+
+    .btn:hover {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 20px 50px rgba(99, 102, 241, 0.4);
+    }
+
+    .floating {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(100, 200, 255, 0.07);
+      backdrop-filter: blur(8px);
+      pointer-events: none;
+      animation: float 18s infinite ease-in-out;
+    }
+
+    .floating:nth-child(1) { width: 280px; height: 280px; top: 12%; left: 8%;  animation-delay: 0s;    }
+    .floating:nth-child(2) { width: 340px; height: 340px; bottom: 18%; right: 10%; animation-delay: 4s;  }
+    .floating:nth-child(3) { width: 220px; height: 220px; top: 55%; right: 15%;  animation-delay: 9s;  }
+
+    @keyframes float {
+      0%, 100%   { transform: translate(0, 0) rotate(0deg); }
+      25%        { transform: translate(60px, -80px) rotate(10deg); }
+      50%        { transform: translate(-40px, 100px) rotate(-15deg); }
+      75%        { transform: translate(80px, 40px) rotate(5deg); }
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 3.8rem; }
+      .subtitle { font-size: 1.15rem; }
+      .btn { padding: 12px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="hero-content">
+        <h1>Valami nagyon szép indul itt</h1>
+        <p class="subtitle">
+          Minimalista dizájn • lágy animációk • modern hangulat<br>
+          Csak tedd magadévá és használd nyugodtan.
+        </p>
+        <a href="#" class="btn">Get Started →</a>
+      </div>
+    </div>
+
+    <div class="floating"></div>
+    <div class="floating"></div>
+    <div class="floating"></div>
+  </header>
+
+</body>
+</html>
